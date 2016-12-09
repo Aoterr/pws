@@ -34,9 +34,9 @@ td{
 			style="margin-top: 10px; margin-left: 5px;">
 			<li><span>客户管理</span>
 				<ul>
-					<li data-options="attributes:{'url':'/pws/page/item-add'}">新增客户</li>
+					<li data-options="attributes:{'url':'/pws/page/news_add'}">新增客户</li>
 					<li data-options="attributes:{'url':'/pws/page/item-list'}">查询客户</li>
-					<li data-options="attributes:{'url':'/pws/page/item-param-list'}">客户列表</li>
+					<li data-options="attributes:{'url':'/pws/page/news_list'}">客户列表</li>
 				</ul></li>
 			<li><span>网站内容管理</span>
 				<ul>
@@ -47,7 +47,7 @@ td{
 	</div>
 
 	<div data-options="region:'center',title:''"  ">
-		<div id="tabs" class="easyui-tabs">
+		<div id="tabs" class="easyui-tabs" style="width:60%;">
 			
 			<div title="我的门户">
 
@@ -110,7 +110,7 @@ td{
 			$("#tabs").tabs('add',{
 				title : 'dd',
 				content: '<div style="padding:10px">Content</div>',
-				closable: false
+				closable: true
 			});
 		}
 	</script>

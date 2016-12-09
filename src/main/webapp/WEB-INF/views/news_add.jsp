@@ -4,8 +4,27 @@
 <div style="padding: 10px 10px 10px 10px" id="dd">
 	<form action="">
 
-		<input type="text" /></br> <input type="text" /></br> <input type="text" /></br> <input
-			type="text" /></br> <input type="text" /></br> <input type="text" />
+		<div style="margin-bottom:10px">
+			<label class="textbox-label">Switch:</label>
+			<input class="easyui-textbox" label="Full name:" prompt="Full name" >
+		</div>
+		<div style="margin-bottom:10px">
+			<label class="textbox-label">Switch:</label>
+			<input class="easyui-datebox" label="Birthday:" prompt="Birthday" data-options="editable:false,panelWidth:220,panelHeight:240,iconWidth:30">
+		</div>
+		<div style="margin-bottom:10px">
+			<label class="textbox-label">Switch:</label>
+			<input class="easyui-passwordbox" label="Password:" prompt="Password">
+		</div>
+		<div style="margin-bottom:10px">
+			<label class="textbox-label">Switch:</label>
+			<input class="easyui-numberbox" label="Number:" prompt="Number" >
+		</div>
+		<div style="margin-bottom:10px">
+			<label class="textbox-label">Switch:</label><!--
+				--><input class="easyui-switchbutton">
+		</div>
+
 	</form>
 </div>
 <script type="text/javascript">
