@@ -70,7 +70,7 @@
 
 	function submitForm() {
 		if (!$('#itemAddForm').form('validate')) {
-			$.messager.alert('提示', '表单还未填写完成!');
+			$.messager.alert('提示', '表单你还未填写完成!');
 			return;
 		}
 		//处理商品的价格的单位，将元转化为分
