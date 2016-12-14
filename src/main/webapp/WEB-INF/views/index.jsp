@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:include page="/commons/common-js.jsp"></jsp:include>
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>jQuery.EasyUI- 1.2.6 后台经典框架使用DEMO</title>
-    <link href="${ctx}/static/css/default.css" rel="stylesheet" type="text/css" />
+    <title>超级系统DEMO</title>
 
-    <link rel="stylesheet" type="text/css" href="${ctx}/static/js/themes/default/easyui.css" />
-    <link rel="stylesheet" type="text/css" href="${ctx}/static/js/themes/icon.css" />
-    <script type="text/javascript" src="${ctx}/static/js/jquery.min.js"></script>
-    <script type="text/javascript" src="${ctx}/static/js/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src='${ctx}/static/js/XiuCai.index.js'> </script>
+    <script type="text/javascript" src='${ctx}/static/js/jquery.jdirk.js'> </script>
+    <script type="text/javascript" src='${ctx}/static/js/jeasyui.extensions.theme.js'> </script>
+
+    <script type="text/javascript" src='${ctx}/static/js/XiuCai.index.js'> </script>
+
 
     <script type="text/javascript">
 
@@ -21,7 +21,7 @@ pageEncoding="UTF-8"%>
 	"menus": [{
 		"menuid": "1",
 		"icon": "icon-sys",
-		"menuname": "控件使用",
+		"menuname": "新增新闻",
 		"menus": [{
 			"menuid": "12",
 			"menuname": "疯狂秀才",
@@ -121,7 +121,7 @@ pageEncoding="UTF-8"%>
 			"menuid": "21",
 			"menuname": "员工列表",
 			"icon": "icon-nav",
-			"url": "demo.html"
+			"url": "user/user_add"
 		},
 		{
 			"menuid": "22",
@@ -251,11 +251,17 @@ pageEncoding="UTF-8"%>
 </head>
 <body class="easyui-layout" style="overflow-y: hidden"  fit="true"   scroll="no">
 <div data-options="region:'north',border:false" style="overflow: hidden; height: 30px;
-        background: url(${cts}/static/images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
+        background: url(/pws/static/images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%;
         line-height: 20px;color: #fff; font-family: Verdana, 微软雅黑,黑体">
 
-    <span style="float:right; padding-right:20px;" class="head">欢迎 疯狂秀才 <a href="#" id="editpass">修改密码</a> <a href="#" id="loginOut">安全退出</a></span>
-    <span style="padding-left:10px; font-size: 16px; "><img src="${ctx}/static/images/blocks.gif" width="20" height="20" align="absmiddle" /> jQuery.EasyUI- 1.2.6 应用实例</span>
+    <span style="float:right; padding-right:20px;" class="head">欢迎 郭帅 <a href="#" id="editpass">修改密码</a> <a href="#" id="loginOut">安全退出</a></span>
+    <span id = "timerSpan" style="float: right;padding-right:20px;  "></span>
+    <div id="themeSpan">
+        <span>更换皮肤风格：</span>
+        <select id="themeSelector"></select>
+        <a id="btnHideNorth" class="easyui-linkbutton" data-options="plain: true, iconCls: 'layout-button-up'"></a>
+    </div>
+    <span style="padding-left:10px; font-size: 16px; "><img src="${ctx}/static/images/blocks.gif" width="20" height="20" align="absmiddle" /> jQuery.EasyUI应用实例</span>
 </div>
 <div data-options="region:'west',split:true,title:'导航菜单'" style="width:180px;" id="west">
     <div id="nav">
@@ -278,7 +284,7 @@ pageEncoding="UTF-8"%>
 <div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;">south region</div>
 <div id="mainPanle" data-options="region:'center'" style="background: #eee; overflow-y:hidden">
     <div id="tabs" class="easyui-tabs"  fit="true" border="false" >
-        <div data-options="title:'欢迎使用',iconCls: 'icon-hamburg-home'" style="padding:20px;overflow:hidden; color:red; " >
+        <div data-options="title:'欢迎使用'" style="padding:20px;overflow:hidden; color:red; " >
 
         </div>
     </div>

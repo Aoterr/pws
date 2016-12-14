@@ -23,7 +23,7 @@ var TT = TAOTAO = {
 	// 编辑器参数
 	kingEditorParams : {
 		filePostName  : "uploadFile",
-		uploadJson : '/rest/pic/upload',
+		uploadJson : '/pws/pic/upload',
 		dir : "image"
 	},
 	// 格式化时间
@@ -112,11 +112,11 @@ var TT = TAOTAO = {
     			    modal:true,
     			    closed:true,
     			    iconCls:'icon-save',
-    			    title:'选择类目',
+    			    title:'选择类目d',
     			    onOpen : function(){
     			    	var _win = this;
     			    	$("ul",_win).tree({
-    			    		url:'/rest/item/cat/list',
+    			    		url:'/pws/item/cat/list',
     			    		animate:true,
     			    		onClick : function(node){
     			    			if($(this).tree("isLeaf",node.target)){
@@ -183,7 +183,7 @@ var TT = TAOTAO = {
     },
     
     changeItemParam : function(node,formId){
-    	$.getJSON("/rest/item/param/query/itemcatid/" + node.id,function(data){
+    	$.getJSON("/pws/item/param/query/itemcatid/" + node.id,function(data){
 			  if(data.status == 200 && data.data){
 				 $("#"+formId+" .params").show();
 				 var paramData = JSON.parse(data.data.paramData);

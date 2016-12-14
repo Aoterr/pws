@@ -12,5 +12,9 @@ public class PageController {
 	public String page(@PathVariable("pageName") String pageName){
 		return pageName;
 	}
+	@RequestMapping(value="user/{pageName}")
+	public String pageItem(@PathVariable("pageName") String pageName){
 
+		return "user/"+pageName;
+	}
 }

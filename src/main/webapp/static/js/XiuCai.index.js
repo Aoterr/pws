@@ -15,10 +15,22 @@ window.onload = function(){
 var onlyOpenTitle="欢迎使用";//不允许关闭的标签的标题
 
 $(function(){
+	//初始化左菜单
 	InitLeftMenu();
+
 	tabClose();
+
 	tabCloseEven();
 
+	instTimerSpan();
+    /*$("themeSelector").combobox({
+        width: 140, editable: false, data: $.easyui.theme.dataSource, valueField: "path", textField: "name",
+        value: $.easyui.theme.dataSource[0].path,
+        onSelect: function (record) {
+            var opts = $(this).combobox("options");
+            setTheme(record[opts.valueField])
+        }
+    });*/
 /* 选择TAB时刷新内容
 	$('#tabs').tabs({
         onSelect: function (title) {
@@ -33,7 +45,19 @@ $(function(){
     });
 */
 })
+/*插入时间*/
+function instTimerSpan () {
+	var timerSpan = $("#timerSpan"), interval = function () { timerSpan.text($.date.toLongDateTimeString(new Date())); };
+    interval();
+    setInterval(interval, 1000);
+};
 
+/*setTheme = function (theme) {
+    $.easyui.theme(true, theme, function (item) {
+        var msg = $.string.format("您设置了新的系统主题皮肤为：{0}，{1}。", item.name, item.path);
+        $.easyui.messager.show(msg);
+    });
+};*/
 //初始化左侧
 function InitLeftMenu() {
 	$("#nav").accordion({animate:false,fit:true,border:true});
@@ -143,13 +167,14 @@ function find(menuid){
 }
 
 function addTab(subtitle,url,icon){
-	if(!$('#tabs').tabs('exists',subtitle)){
-		$('#tabs').tabs('add',{
-			title:subtitle,
-			content:createFrame(url),
-			closable:true,
-			icon:icon
-		});
+            if(!$('#tabs').tabs('exists',subtitle)){
+                $('#tabs').tabs('add',{
+                    title:subtitle,
+                    href:url,
+                    closable:true,
+                    icon:icon,
+                    bodyCls:"content"
+                });
 	}else{
 		$('#tabs').tabs('select',subtitle);
 		$('#mm-tabupdate').click();
