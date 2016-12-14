@@ -5,7 +5,6 @@
 <mapper namespace="com.sdsx.mapper.LoginMapper">
 	<select id="getByUserName" parameterType="java.lang.String"
 		resultType="User">
-<!-- 		select user_name,password from ssm_user where user_name=#{username} -->
 		SELECT PASSWORD,USER_NAME USERNAME,AGE,ID FROM ssm_user WHERE USER_NAME=#{username}
 	</select>
 </mapper>

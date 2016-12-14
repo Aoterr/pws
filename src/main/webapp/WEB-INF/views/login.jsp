@@ -30,10 +30,16 @@
     		var username = $("[name=username]").val();
     		var password = $("[name=password]").val();
     		
-    		if(username!="admin" || password!="123456"){
+    		/*if(username!="admin" || password!="123456"){
     			$.messager.alert('错误',"用户名密码不正确！");
     			return ;
-    		}
+    		}*/
+    		if(username =""||usrename=null){
+                $.messager.alert("请输入用户名！");
+			}
+			if(password =""||password=null){
+				$.messager.alert("请输入密码!");
+			}
     		window.location.href="/pws/page/index";
     	});
     </script>
