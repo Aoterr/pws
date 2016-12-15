@@ -16,7 +16,9 @@ public class LoginController {
 
 	@RequestMapping(method=	 RequestMethod.POST)
 	public String login(User user){
+		user.setId(1);
 		User thisUser = userService.validate(user);
+
 		if(thisUser!=null)
 			return "index";
 		return "login";

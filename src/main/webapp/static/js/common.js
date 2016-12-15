@@ -116,8 +116,9 @@ var TT = TAOTAO = {
     			    onOpen : function(){
     			    	var _win = this;
     			    	$("ul",_win).tree({
-    			    		url:'/pws/item/cat/list',
+    			    		url:'/pws/item/cat',
     			    		animate:true,
+							method:"GET",
     			    		onClick : function(node){
     			    			if($(this).tree("isLeaf",node.target)){
     			    				// 填写到cid中

@@ -121,7 +121,7 @@ pageEncoding="UTF-8"%>
 			"menuid": "21",
 			"menuname": "员工列表",
 			"icon": "icon-nav",
-			"url": "user/user_add"
+			"url": "page/user/user_add"
 		},
 		{
 			"menuid": "22",
