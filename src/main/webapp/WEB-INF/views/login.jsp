@@ -8,7 +8,8 @@
 </head>
 <body style="background-color: #F3F3F3">
     <div class="easyui-dialog" title="管理员登录" data-options="closable:false,draggable:false" style="width:400px;height:300px;padding:10px;">
-       	<div style="margin-left: 50px;margin-top: 50px;">
+       	<form action="login" method="post" id="loginForm">
+		<div style="margin-left: 50px;margin-top: 50px;">
        		<div style="margin-bottom:20px;">
 	            <div>
 	            	用户名: <input name="username" class="easyui-textbox" data-options="required:true" style="width:200px;height:32px" value="admin"/>
@@ -16,31 +17,28 @@
 	        </div>
 	        <div style="margin-bottom:20px">
 	            <div>
-	            	密&nbsp;码: <input name="password" class="easyui-textbox" type="password" style="width:200px;height:32px" data-options="" value="admin"/>
+	            	密&nbsp;&nbsp;&nbsp;码: <input name="password" class="easyui-textbox" type="password" style="width:200px;height:32px" data-options="required:true" value="123456"/>
 	            </div>
 	        </div>
 	        <div>
 	            <a id="login" class="easyui-linkbutton" iconCls="icon-ok" style="width:100px;height:32px;margin-left: 50px">登录</a>
 	        </div>
        	</div>
+		</form>
     </div>
     
     <script type="text/javascript">
     	$("#login").click(function(){
     		var username = $("[name=username]").val();
     		var password = $("[name=password]").val();
-    		
-    		/*if(username!="admin" || password!="123456"){
-    			$.messager.alert('错误',"用户名密码不正确！");
-    			return ;
-    		}*/
-    		if(username =""||usrename=null){
-                $.messager.alert("请输入用户名！");
+    		if(username!=""&&username!=null&&password!=""&&password!=null){
+    		    $("#loginForm").submit();
+
+                return;
 			}
-			if(password =""||password=null){
-				$.messager.alert("请输入密码!");
-			}
-    		window.location.href="/pws/page/index";
+            $.messager.alert('错误',"请输入用户名密码！");
+            return ;
+
     	});
     </script>
 </body>

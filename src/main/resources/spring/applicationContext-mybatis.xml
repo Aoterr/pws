@@ -21,8 +21,8 @@
 			</list>
 		</property>
 	</bean>
-	
-	
+
+
 	 <!-- 定义数据源 -->
 	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
 		destroy-method="close">
@@ -39,14 +39,14 @@
 		<!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：60，如果要永远存活设置为0 -->
 		<property name="idleMaxAge" value="30" />
 		<!-- 每个分区最大的连接数 -->
-		<!-- 
+		<!--
 			判断依据：请求并发数
 		 -->
 		<property name="maxConnectionsPerPartition" value="100" />
 		<!-- 每个分区最小的连接数 -->
 		<property name="minConnectionsPerPartition" value="5" />
 	</bean>
-	
+
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
 		<!-- 数据源 -->
 		<property name="dataSource" ref="dataSource"/>
@@ -57,11 +57,10 @@
 		<!-- 别名包 -->
 		<property name="typeAliasesPackage" value="com.sdsy.entity"/>
 	</bean>
-	
+
 	<!-- mapper接口的扫描器 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.sdxy.mapper"/>
+		<property name="basePackage" value="com.sdsy.mapper"/>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
-
 </beans>
