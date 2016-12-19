@@ -23,7 +23,17 @@ public class ItemCat extends BasePojo {
     private Integer sortOrder;
 
     private Boolean isParent;
-    
+
+    //为了easyUI树前台显示
+    public String getText() {
+        return this.name;
+    }
+    public String getState(){
+        if(isParent){
+            return "closed";
+        }
+        return "open";
+    }
     public Long getId() {
         return id;
     }
